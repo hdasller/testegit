@@ -23,5 +23,8 @@ jobs:
             "client_payload": { "branch": "${{ github.event.inputs.tbranch }}"}
             }' \
           --fail 
-      - name: Teste
-        run: val=${{ secrets.GITHUB_TOKEN }} && echo  Bearer $val 
+      - name: Repo
+        run: echo Repo ${{ github.repository }}
+
+      - name: URL
+        run: echo URL https://api.github.com/repos/${{ github.repository }}/dispatches 

@@ -1,6 +1,6 @@
 name: deploy
 on:
-  2:
+  workflow_dispatch:
     inputs:
       env:
         description: Environment (dev, qa, prod or sandbox)
@@ -9,7 +9,7 @@ on:
 
 jobs:
   bump-version:
-    name: Teste deploy via ui
+    name: Teste env
     runs-on: ubuntu-latest
     steps:
       - name: Deploy tag

@@ -14,5 +14,5 @@ jobs:
     steps:
       - name: Configure SSH
         run: |
-        echo "Payloadddd ${{ github.event.client_payload }}"
+        echo "Payloadddd ${{ github.event.client_payload }}";
           

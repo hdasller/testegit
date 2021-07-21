@@ -1,0 +1,16 @@
+name: deploy
+on:
+  2:
+    inputs:
+      env:
+        description: Environment (dev, qa, prod or sandbox)
+        default: dev
+        required: true
+
+jobs:
+  bump-version:
+    name: Teste deploy via ui
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy tag
+        run: echo ${{ github.event.inputs.env }}

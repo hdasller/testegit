@@ -1,0 +1,17 @@
+name: HML - Deploy
+on:   
+  repository_dispatch:
+    types: [hml-deploy]
+  push:
+    branches:
+      - master
+jobs:
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Configure SSH
+        run: |
+        echo "Payloadddd ${{ github.event.client_payload }}"
+          

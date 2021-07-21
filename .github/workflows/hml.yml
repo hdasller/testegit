@@ -11,5 +11,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Teste payload
-        run: echo Payloadddd ${{ github.event.client_payload }}
+        run: echo Payloadddd ${{ github.event.client_payload.tbranch }}
         

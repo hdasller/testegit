@@ -23,3 +23,5 @@ jobs:
             "client_payload": { "branch": "${{ github.event.inputs.tbranch }}"}
             }' \
           --fail 
+      - name: Teste Bearer ${{ secrets.GITHUB_TOKEN }}
+        run: echo 

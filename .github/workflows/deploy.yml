@@ -14,8 +14,7 @@ jobs:
      steps:
       - name: Dispatch action and pass 
         run: | 
-          chmod +x /github/workspace/scripts/dispatch-action.sh
-          /github/workspace/scripts/dispatch-action.sh"
+          ls -la /github/workspace/
       - name: Repo
         run: echo Repo ${{ github.repository }}
         

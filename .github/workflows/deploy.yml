@@ -1,4 +1,4 @@
-name: Deploy manual 2
+name: Deploy manual
 
 on:
   workflow_dispatch:
@@ -24,4 +24,4 @@ jobs:
             }' \
           --fail 
       - name: Teste
-        run: val=${{ secrets.GITHUB_TOKEN }} && echo  Bearer  $val 
+        run: val=${{ secrets.GITHUB_TOKEN }} && echo  Bearer $val 

@@ -12,5 +12,4 @@ jobs:
     steps:
       - name: Teste payload
         run: |
-        echo "Payloadddd ${{ github.event.client_payload }}"
-          
+        echo Payloadddd ${{ github.event.client_payload }}

@@ -14,17 +14,10 @@ jobs:
      steps:
       - name: Dispatch action and pass 
         run: |
-        curl --location --request POST 'https://api.github.com/repos/${{ github.repository }}/dispatches' \
-        --header 'Authorization: Bearer  ${{ secrets.GITHUB_TOKEN }}' \
-        --header 'Content-Type: application/json' \
-        --data-raw '{
-            "event_type": "hml-deploy",
-            "client_payload": {
-                "branch": "homolog"
-            }
-        }'
+        curl --location --request GET 'https://api.github.com/repos/hdasller/testegit/actions/workflows/11506890/dispatches' \
+        --header 'Authorization: Bearer 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' \
       - name: Repo
         run: echo Repo ${{ github.repository }}
-
-      - name: URL
-        run: echo URL https://api.github.com/repos/${{ github.repository }}/dispatches 
+        
+      - name: Repo
+        run: echo Repo ${{ github.repository }}

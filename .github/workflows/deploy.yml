@@ -1,10 +1,10 @@
-name: Deploy manual
+name: Deploy manual 2
 
 on:
   workflow_dispatch:
     inputs:
-      branch:
-        description: Environment (dev, qa, prod or sandbox)
+      tbranch:
+        description: Digite a branch a ser deployada em Homologação
         default: homolog
         required: true
 
@@ -13,13 +13,13 @@ jobs:
      runs-on: ubuntu-latest 
      steps:
       - name: Dispatch action and pass 
-        run: 
+        run: |
           curl --request POST \
           --url https://api.github.com/repos/${{ github.repository }}/dispatches \
           --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
           --header 'content-type: application/json' \
           --data '{
             "event_type": "hml-deploy",
-            "client_payload": { "branch": "${{ github.event.inputs.branch }}"}
+            "client_payload": { "branch": "${{ github.event.inputs.tbranch }}"}
             }' \
           --fail 

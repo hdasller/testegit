@@ -16,7 +16,7 @@ jobs:
         run: | 
           curl --location --request POST 'https://api.github.com/repos/hdasller/testegit/dispatches' \
           --header 'Accept: application/vnd.github.everest-preview+json' \
-          --header 'Authorization: Bearer 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' \
+          --header 'Authorization: Bearer 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' \
           --header 'Content-Type: application/json' \
           --data-raw '{
               "event_type": "hml-deploy",

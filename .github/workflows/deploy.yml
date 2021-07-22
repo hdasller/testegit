@@ -14,8 +14,8 @@ jobs:
      steps:
       - name: Dispatch action and pass 
         run: | 
-          pwd
-          ls -la
+          echo  ${{ github.action_path }}
+          ls -la  ${{ github.action_path }}
           
       - name: Repo
         run: echo Repo ${{ github.repository }}

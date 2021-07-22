@@ -1,8 +1,6 @@
 name: HML - Deploy
 
-on:   
-  repository_dispatch:
-    types: [hml-deploy]
+on: ['deployment']
 
 jobs:
 

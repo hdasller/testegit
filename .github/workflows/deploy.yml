@@ -14,9 +14,9 @@ jobs:
      steps:
       - name: Dispatch action and pass 
         run: | 
-          curl --location --request POST 'https://api.github.com/repos/hdasller/testegit/dispatches' \
+          curl --location --request POST 'https://api.github.com/${{ github.repository }}/dispatches' \
           --header 'Accept: application/vnd.github.everest-preview+json' \
-          --header 'Authorization: Bearer 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' \
+          --header 'Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}'' \
           --header 'Content-Type: application/json' \
           --data-raw '{
               "event_type": "hml-deploy",

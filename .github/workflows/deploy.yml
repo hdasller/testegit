@@ -14,8 +14,9 @@ jobs:
      steps:
       - name: Dispatch action and pass 
         run: | 
-          echo  ${{ github.action_path }}
-          ls -la  ${{ github.action_path }}
+          curl --location --request GET 'https://api.github.com/repos/hdasller/testegit/actions/workflows/11506890/dispatches' \
+          --header 'Authorization: Bearer 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' \
+          --data-raw ''
           
       - name: Repo
         run: echo Repo ${{ github.repository }}

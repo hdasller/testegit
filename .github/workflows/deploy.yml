@@ -2,11 +2,6 @@ name: Deploy manual
 
 on:
   workflow_dispatch:
-    inputs:
-      tbranch:
-        description: Digite a branch a ser deployada em Homologação
-        default: homolog
-        required: true
 
 jobs:
   run-deploy:
@@ -14,11 +9,4 @@ jobs:
      steps:
       - name: Dispatch action and pass 
         run: | 
-          curl POST -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-          -H "Accept: application/vnd.github.ant-man-preview+json" \
-          -H "Content-Type: application/json" \
-          https://api.github.com/repos/${{ github.repository }}/dispatches \
-          --data '{ "event_type": "hml-deploy", "client_payload": {
-                  "branch": "homolog"
-          }}'
-
+          echo  Vercel token ${{ github.VERCEL_TOKEN }}}

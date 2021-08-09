@@ -10,3 +10,4 @@ jobs:
       - name: Dispatch action and pass 
         run: | 
           echo  Vercel token ${{ github.VERCEL_TOKEN }}}
+          echo  Branch  ${GITHUB_REF##*/}

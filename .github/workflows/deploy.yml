@@ -2,12 +2,34 @@ name: Deploy manual
 
 on:
   workflow_dispatch:
-
+    inputs:
+      home:
+      description: 'Mensagem *Opcional'
+      required: false
+      default: 'Digite uma mensagem'
 jobs:
-  run-deploy:
-     runs-on: ubuntu-latest 
-     steps:
-      - name: Dispatch action and pass 
-        run: | 
-          echo  Vercel token ${{ secrets.VERCEL_TOKEN }}
-          echo  Branch  ${GITHUB_REF##*/}
+  vercel: 
+    runs-on: ubuntu-latest
+    name: "Checkout"
+    
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '14'
+          registry-url: https://registry.npmjs.org/
+
+      - name: "Deploy to Vercel"
+        run: |
+          prodRun=""
+          if [[ ${GITHUB_REF} == "refs/heads/main" ]]; then
+            prodRun="--prod"
+          fi
+          ls -la
+          git branch
+          pwd
+          npx vercel --token ${VERCEL_TOKEN} $prodRun
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}

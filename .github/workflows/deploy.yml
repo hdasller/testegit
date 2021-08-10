@@ -4,9 +4,9 @@ on:
   workflow_dispatch:
     inputs:
       home:
-      description: 'Mensagem *Opcional'
-      required: false
-      default: 'Digite uma mensagem'
+        description: 'Mensagem *Opcional'
+        required: false
+        default: 'Digite uma mensagem'
 jobs:
   vercel: 
     runs-on: ubuntu-latest
